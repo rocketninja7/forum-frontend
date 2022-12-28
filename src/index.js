@@ -6,16 +6,6 @@ import AllPosts from './components/AllPosts';
 import NewPostForm from './components/NewPostForm';
 import PostView from './components/PostView'
 
-class Bar extends React.Component {
-  render() {
-    return (
-      <div>
-
-      </div>
-    );
-  }
-}
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>

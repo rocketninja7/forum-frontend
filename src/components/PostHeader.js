@@ -1,11 +1,11 @@
 import React from 'react';
 import NewPostButton from './NewPostButton';
+import SearchBar from './SearchBar';
 
 function PostHeader(props) {
   return (
-    <div>
-      <input></input>
-      <button>Search</button>
+    <div style={{display: 'flex', width: '100%'}}>
+      <SearchBar updateSearch={props.updateSearch} style={{flexGrow: '1'}}/>
       <NewPostButton />
     </div>
   );

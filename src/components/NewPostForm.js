@@ -33,7 +33,6 @@ function NewPostForm(props) {
           .then(data => console.log(data))
           .then(_ => {
             navigate('/');
-            // window.location.reload();
           })
           .catch(err => console.log(err));
         }}
