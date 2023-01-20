@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet'
 import PostHeader from './PostHeader';
 import PostCard from './PostCard';
 
@@ -33,6 +34,9 @@ class AllPosts extends React.Component {
     render() {
       return (
         <div>
+          <Helmet>
+            {this.props.helmetStyle}
+          </Helmet>
           <PostHeader updateSearch={s => this.updateSearch(s)} />
           {
             this.state.posts.filter((post) => {

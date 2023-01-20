@@ -5,7 +5,7 @@ import SearchBar from './SearchBar';
 function PostHeader(props) {
   return (
     <div style={{display: 'flex', width: '100%'}}>
-      <SearchBar updateSearch={props.updateSearch} style={{flexGrow: '1'}}/>
+      <SearchBar updateSearch={props.updateSearch} />
       <NewPostButton />
     </div>
   );
