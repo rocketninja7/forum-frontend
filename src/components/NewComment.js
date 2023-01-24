@@ -17,7 +17,7 @@ function NewComment(props) {
                 content: Yup.string().required('Required'),
             })}
             onSubmit={(values, { resetForm }) => {
-                fetch("http://localhost:8080"+fetchTarget, {
+                fetch("https://rocketninja7-forum-backend.onrender.com"+fetchTarget, {
                   method: fetchMethod,
                   body: JSON.stringify({
                     id: parseInt(commentId, 10),

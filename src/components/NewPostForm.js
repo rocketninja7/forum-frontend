@@ -13,7 +13,7 @@ class NewPostForm extends React.Component {
 
   componentDidMount() {
     if(this.props.id) {
-      fetch("http://localhost:8080/post/"+this.props.id+"/")
+      fetch("https://rocketninja7-forum-backend.onrender.com/post/"+this.props.id+"/")
       .then(res => res.json())
       .then(
         res => {
@@ -46,7 +46,7 @@ class NewPostForm extends React.Component {
             content: Yup.string().required('Required'),
           })}
           onSubmit={values => {
-            fetch("http://localhost:8080"+fetchTarget, {
+            fetch("https://rocketninja7-forum-backend.onrender.com"+fetchTarget, {
               method: fetchMethod,
               body: JSON.stringify({
                 id: parseInt(this.props.id, 10),

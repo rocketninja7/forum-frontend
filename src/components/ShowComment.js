@@ -8,7 +8,7 @@ function ShowComment(props) {
                 Edit Comment
             </button>
             <button onClick={() => {
-                fetch("http://localhost:8080/comment/"+props.comment.id+"/", {
+                fetch("https://rocketninja7-forum-backend.onrender.com/comment/"+props.comment.id+"/", {
                     method: 'DELETE',
                 })
                 .then(res => console.log(res))

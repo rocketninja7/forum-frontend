@@ -12,7 +12,7 @@ class PostViewBody extends React.Component {
     }
 
     updateComponent() {
-        fetch("http://localhost:8080/post/"+this.props.params.id+"/")
+        fetch("https://rocketninja7-forum-backend.onrender.com/post/"+this.props.params.id+"/")
         .then(res => res.json())
         .then(
             res => {
@@ -40,7 +40,7 @@ class PostViewBody extends React.Component {
                     Edit Post
                 </button>
                 <button onClick={() => { 
-                    fetch("http://localhost:8080/post/"+this.state.post.id+"/", {
+                    fetch("https://rocketninja7-forum-backend.onrender.com/post/"+this.state.post.id+"/", {
                         method: 'DELETE',
                     })
                     .then(res => console.log(res))

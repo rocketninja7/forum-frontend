@@ -13,7 +13,7 @@ class AllPosts extends React.Component {
     }
   
     componentDidMount() {
-      fetch("http://localhost:8080/")
+      fetch("https://rocketninja7-forum-backend.onrender.com/")
         .then(res => res.json())
         .then(
           res => {
