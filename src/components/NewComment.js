@@ -34,7 +34,7 @@ function NewComment(props) {
                 })
                 .then(response => response.json())
                 .then(data => console.log(data))
-                .then(_ => props.setEditing())
+                .then(_ => props.setEditing ? props.setEditing() : (() => {}) )
                 .then(_ => props.updateComponent())
                 .then(_ => resetForm())
                 .catch(err => console.log(err));
