@@ -18,7 +18,7 @@ class PostViewBody extends React.Component {
             res => {
                 console.log(res);
                 this.setState({
-                    post: res
+                    post: res,
                 });
             }
         )
@@ -34,10 +34,25 @@ class PostViewBody extends React.Component {
             this.state.post ? 
             <div className='post'>
                 <PostTemplate {...this.state} />
+                <button onClick={() => {
+                    this.props.navigate("/editpost/"+this.state.post.id+"/")
+                }}>
+                    Edit Post
+                </button>
+                <button onClick={() => { 
+                    fetch("http://localhost:8080/post/"+this.state.post.id+"/", {
+                        method: 'DELETE',
+                    })
+                    .then(res => console.log(res))
+                    .then(_ => this.props.navigate("/"))
+                    .catch(err => console.log(err));
+                }}>
+                    Delete Post
+                </button>
                 {
                     this.state.post.comments.map(comment => {
                         return (
-                            <Comment key={comment.id} comment={comment} />
+                            <Comment key={comment.id} comment={comment} updateComponent={() => this.updateComponent()} />
                         );
                     })
                 }

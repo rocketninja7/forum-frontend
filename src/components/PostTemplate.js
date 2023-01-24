@@ -22,7 +22,7 @@ function PostTemplate(props) {
         <div className='content'>
             {props.post.content}
         </div>
-        <div>
+        <div style={{display: 'flex', flexWrap: 'wrap'}}>
             {props.post.tags.map((tag, idx) => <Tag key={tag.id} name={tag.name} color={colors[idx%colors.length]} />)}
         </div>
     </div>

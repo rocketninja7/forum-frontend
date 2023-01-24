@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css';
 import AllPosts from './components/AllPosts';
-import NewPostForm from './components/NewPostForm';
+import NewPost from './components/NewPost';
 import PostView from './components/PostView';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -16,8 +16,9 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path='/' element={<AllPosts helmetStyle={helmetStyle} />}/>
-      <Route path='/newpost/' element={<NewPostForm helmetStyle={helmetStyle} />} />
+      <Route path='/newpost/' element={<NewPost helmetStyle={helmetStyle} />} />
       <Route path='/post/:id/' element={<PostView helmetStyle={helmetStyle} />} />
+      <Route path='/editpost/:id/' element={<NewPost helmetStyle={helmetStyle} />} />
     </Routes>
   </BrowserRouter>  
 );
